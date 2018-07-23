@@ -24,7 +24,8 @@ import { Component, Input } from '@angular/core';
     </div> 
     `,
 
-    // *ngIf= is used to have if conditions in our Angular code, in this case its used to hide an event property if its empty
+    // *ngIf= is used to have if conditions in our Angular code, in this case its used to hide an event property 
+    // (online or location) if its empty
     // *ngSwitch works the same as your run of the mill switch statement
     /*  ngClass allows you to apply multiple syles for an element, the values are
         boolean expressions of whether or not to display the CSS class
