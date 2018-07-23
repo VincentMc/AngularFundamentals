@@ -19,7 +19,7 @@ import { ToastrService } from './common/toastr.service';
     EventThumbnailComponent,
     NavBarComponent
   ],
-  providers: [EventService, ToastrService], // Means Services
+  providers: [EventService, ToastrService], // Means Services, added Toastr service
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
