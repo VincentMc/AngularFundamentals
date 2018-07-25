@@ -5,6 +5,10 @@ export class EventService {
     getEvents() {
         return EVENTS;
     }
+
+    getEvent(id: number) {
+      return EVENTS.find(event => event.id === id);
+    }
 }
 
 // Injectable is only required when a service also injects another service
