@@ -16,7 +16,7 @@ import {
   CreateEventComponent,
   EventRouterActivator,
   EventListResolver
-} from './events/index';
+} from './events/index'; // Cleaned up routes
 
 @NgModule({
   imports: [
