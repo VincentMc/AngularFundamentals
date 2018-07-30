@@ -1,9 +1,21 @@
 import { Routes } from '@angular/router';
-import { EventsListComponent } from './events/events-list.component';
-import { EventDetailsComponent } from './events/event-details/event-details.component';
+import {
+  EventsListComponent,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouterActivator,
+  EventListResolver
+} from './events/index';
+
+import { Error404Component } from './errors/404.component';
 
 export const appRoutes: Routes = [
-    { path: 'events', component: EventsListComponent }, // If path is events go to EventListComponent
-    { path: 'events/:id', component: EventDetailsComponent }, // If Path has an id go to EventDetailsComponent
-    { path: '', redirectTo: '/events', pathMatch: 'full'} // If path is redirect to the vents path
+    { path: 'events/new', component: CreateEventComponent,
+      canDeactivate: ['canDeactivateCreateEvent'] },
+    { path: 'events', component: EventsListComponent, resolve: {events: EventListResolver} }, // If path is events go to EventListComponent
+    { path: 'events/:id', component: EventDetailsComponent,
+      canActivate: [EventRouterActivator] },
+    { path: '404', component: Error404Component },
+    { path: '', redirectTo: '/events', pathMatch: 'full'}, // If path is redirect to the vents path
+    { path: 'user', loadChildren: './user/user.module#UserModule'}
 ];
