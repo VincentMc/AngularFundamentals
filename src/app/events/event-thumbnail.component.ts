@@ -21,7 +21,7 @@ import { Component, Input } from '@angular/core';
         <div *ngIf="event?.onlineUrl">
             Online URL: {{event?.onlineUrl}}
         </div>
-    </div> 
+    </div>
     `,
 
     // *ngIf= is used to have if conditions in our Angular code, in this case its used to hide an event property 
