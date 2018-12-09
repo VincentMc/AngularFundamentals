@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from './shared/event.service';
 import { ToastrService } from '../common/toastr.service';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { IEvent } from './shared/event.model';
 
 @Component({
     template: `
@@ -26,8 +27,8 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
     // [event] above is referring to the input parameter of our eventThumbnail component
     // #thumbnail is the variable name we gave to our <event-thumbnail> object
 })
-export class EventsListComponent implements OnInit{
-    events: any;
+export class EventsListComponent implements OnInit {
+    events: IEvent[];
 
     constructor(private eventService: EventService, private toastr: ToastrService,
         private route: ActivatedRoute) {

@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { IEvent } from './shared/event.model';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'event-thumbnail',
     template: `
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
@@ -24,7 +26,7 @@ import { Component, Input } from '@angular/core';
     </div>
     `,
 
-    // *ngIf= is used to have if conditions in our Angular code, in this case its used to hide an event property 
+    // *ngIf= is used to have if conditions in our Angular code, in this case its used to hide an event property
     // (online or location) if its empty
     // *ngSwitch works the same as your run of the mill switch statement
     /*  ngClass allows you to apply multiple syles for an element, the values are
@@ -38,7 +40,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class EventThumbnailComponent {
-   @Input() event: any;
+   @Input() event: IEvent;
 
     getStartTimeStyle(): any {
         if (this.event && this.event.time === '8:00 am') {

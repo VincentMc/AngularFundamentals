@@ -16,6 +16,7 @@ export class EventDetailsComponent {
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
+    // tslint:disable-next-line:use-life-cycle-interface
     ngOnInit() {
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
     }
